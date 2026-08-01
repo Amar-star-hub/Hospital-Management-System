@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hospital Dashboard</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+<style>
+
+.dashboard-container{
+
+width:90%;
+
+margin:auto;
+
+padding:30px;
+
+}
+
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+margin-top:30px;
+
+}
+
+
+.card{
+
+background:white;
+
+padding:25px;
+
+text-align:center;
+
+border-radius:12px;
+
+box-shadow:0px 5px 15px rgba(0,0,0,0.2);
+
+}
+
+
+.card h2{
+
+font-size:22px;
+
+}
+
+
+.card h1{
+
+font-size:45px;
+
+color:#0077b6;
+
+margin:15px;
+
+}
+
+
+.card p{
+
+font-size:18px;
+
+}
+
+
+
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+
+<header>
+
+
+<h1>🏥 Hospital Management Dashboard</h1>
+
+
+
+<nav>
+
+<a href="/">Home</a>
+
+<a href="/doctors">Doctors</a>
+
+<a href="/patient_list">Patients</a>
+
+<a href="/appointment_list">Appointments</a>
+
+<a href="/billing">Billing</a>
+
+<a href="/bill_list">Bills</a>
+
+<a href="/contact">Contact</a>
+
+<a href="/logout">Logout</a>
+
+
+</nav>
+
+
+</header>
+
+
+
+
+
+
+
+<div class="dashboard-container">
+
+
+<h2>Welcome Admin 👨‍💼</h2>
+
+
+<div class="cards">
+
+
+
+<div class="card">
+
+<h2>🧑 Patients</h2>
+
+<h1>{{ total_patients }}</h1>
+
+<p>Total Registered Patients</p>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h2>📅 Appointments</h2>
+
+<h1>{{ total_appointments }}</h1>
+
+<p>Total Appointments</p>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h2>⏳ Pending</h2>
+
+<h1>{{ pending }}</h1>
+
+<p>Pending Appointments</p>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h2>✅ Confirmed</h2>
+
+<h1>{{ confirmed }}</h1>
+
+<p>Confirmed Appointments</p>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h2>✔ Completed</h2>
+
+<h1>{{ completed }}</h1>
+
+<p>Completed Appointments</p>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h2>💰 Bills</h2>
+
+<h1>{{ total_bills }}</h1>
+
+<p>Total Generated Bills</p>
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<footer>
+
+
+<p>
+© 2026 Hospital Management System | All Rights Reserved
+</p>
+
+
+</footer>
+
+
+
+
+</body>
+
+</html>

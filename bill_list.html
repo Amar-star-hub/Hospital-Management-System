@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Bill List</title>
+
+<link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>💰 Billing Records</h1>
+
+
+<nav>
+
+<a href="/">Home</a>
+<a href="/billing">Create Bill</a>
+<a href="/dashboard">Dashboard</a>
+
+</nav>
+
+</header>
+
+
+
+
+<div class="form-container">
+
+
+<h2>All Bills</h2>
+
+
+<table border="1" width="100%">
+
+
+<tr>
+
+<th>ID</th>
+<th>Patient</th>
+<th>Doctor</th>
+<th>Consultation Fee</th>
+<th>Medicine Charge</th>
+<th>Total</th>
+<th>Status</th>
+<th>Action</th>
+
+</tr>
+
+
+
+{% for bill in bills %}
+
+
+<tr>
+
+<td>{{bill[0]}}</td>
+
+<td>{{bill[1]}}</td>
+
+<td>{{bill[2]}}</td>
+
+<td>{{bill[3]}}</td>
+
+<td>{{bill[4]}}</td>
+
+<td>{{bill[5]}}</td>
+
+
+<td>
+
+{{bill[6]}}
+
+</td>
+
+
+<td>
+
+
+<a href="/update_payment/{{bill[0]}}/Paid">
+
+<button>
+Paid
+</button>
+
+</a>
+
+
+<a href="/delete_bill/{{bill[0]}}">
+
+<button>
+Delete
+</button>
+
+</a>
+
+
+</td>
+
+
+</tr>
+
+
+{% endfor %}
+
+
+</table>
+
+
+</div>
+
+
+
+</body>
+
+</html>

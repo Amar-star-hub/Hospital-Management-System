@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Doctors</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+<style>
+
+.doctor-container{
+
+width:90%;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:20px;
+
+}
+
+
+
+.doctor-card{
+
+background:white;
+
+padding:20px;
+
+border-radius:10px;
+
+box-shadow:0 0 10px gray;
+
+text-align:center;
+
+}
+
+
+.doctor-card h3{
+
+color:#0077b6;
+
+}
+
+
+.doctor-card p{
+
+font-size:16px;
+
+}
+
+
+
+.doctor-icon{
+
+font-size:50px;
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>👨‍⚕️ Hospital Doctors</h1>
+
+
+<nav>
+
+<a href="/">Home</a>
+
+<a href="/doctors">Doctors</a>
+
+<a href="/patient_list">Patients</a>
+
+<a href="/appointments">Appointments</a>
+
+<a href="/dashboard">Dashboard</a>
+
+<a href="/contact">Contact</a>
+
+<a href="/logout">Logout</a>
+
+</nav>
+
+
+</header>
+
+
+
+
+
+<div class="form-container" style="width:90%">
+
+
+<h2>Available Doctors</h2>
+
+
+
+<div class="doctor-container">
+
+
+
+<div class="doctor-card">
+
+<div class="doctor-icon">
+👨‍⚕️
+</div>
+
+<h3>Dr. Patil</h3>
+
+<p>
+<strong>Specialization:</strong>
+Cardiologist
+</p>
+
+<p>
+Experience: 10 Years
+</p>
+
+<p>
+Phone: 9876543210
+</p>
+
+</div>
+
+
+
+
+
+
+
+<div class="doctor-card">
+
+<div class="doctor-icon">
+👨‍⚕️
+</div>
+
+<h3>Dr. Sharma</h3>
+
+<p>
+<strong>Specialization:</strong>
+Neurologist
+</p>
+
+<p>
+Experience: 12 Years
+</p>
+
+<p>
+Phone: 9876543211
+</p>
+
+</div>
+
+
+
+
+
+
+
+<div class="doctor-card">
+
+<div class="doctor-icon">
+👨‍⚕️
+</div>
+
+<h3>Dr. Kulkarni</h3>
+
+<p>
+<strong>Specialization:</strong>
+General Physician
+</p>
+
+<p>
+Experience: 8 Years
+</p>
+
+<p>
+Phone: 9876543212
+</p>
+
+</div>
+
+
+
+
+
+
+
+<div class="doctor-card">
+
+<div class="doctor-icon">
+👨‍⚕️
+</div>
+
+<h3>Dr. Deshmukh</h3>
+
+<p>
+<strong>Specialization:</strong>
+Orthopedic
+</p>
+
+<p>
+Experience: 15 Years
+</p>
+
+<p>
+Phone: 9876543213
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<footer>
+
+<p>
+© 2026 Hospital Management System
+</p>
+
+</footer>
+
+
+
+</body>
+
+</html>

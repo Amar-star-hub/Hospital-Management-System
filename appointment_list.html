@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Appointment List</title>
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+<style>
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+margin-top:20px;
+
+}
+
+
+th,td{
+
+border:1px solid #ddd;
+
+padding:12px;
+
+text-align:center;
+
+}
+
+
+th{
+
+background:#0077b6;
+
+color:white;
+
+}
+
+
+tr:nth-child(even){
+
+background:#f2f2f2;
+
+}
+
+
+tr:hover{
+
+background:#d9f1ff;
+
+}
+
+
+
+.edit-btn{
+
+background:green;
+
+color:white;
+
+padding:7px 12px;
+
+border:none;
+
+border-radius:5px;
+
+cursor:pointer;
+
+}
+
+
+
+.delete-btn{
+
+background:red;
+
+color:white;
+
+padding:7px 12px;
+
+border:none;
+
+border-radius:5px;
+
+cursor:pointer;
+
+}
+
+
+
+.status-btn{
+
+background:#0096c7;
+
+color:white;
+
+padding:7px 10px;
+
+border:none;
+
+border-radius:5px;
+
+cursor:pointer;
+
+}
+
+
+
+#search{
+
+width:300px;
+
+padding:10px;
+
+margin-top:15px;
+
+border-radius:5px;
+
+border:1px solid #ccc;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+<header>
+
+
+<h1>📅 Appointment Records</h1>
+
+
+<nav>
+
+<a href="/">Home</a>
+
+<a href="/patient_list">Patients</a>
+
+<a href="/appointments">Book Appointment</a>
+
+<a href="/dashboard">Dashboard</a>
+
+<a href="/logout">Logout</a>
+
+</nav>
+
+
+</header>
+
+
+
+
+
+
+<div class="form-container" style="width:95%">
+
+
+<h2>All Appointments</h2>
+
+
+<h3>
+Total Appointments : {{ appointments|length }}
+</h3>
+
+
+
+
+<input
+
+type="text"
+
+id="search"
+
+placeholder="Search Patient..."
+
+onkeyup="searchAppointment()"
+
+>
+
+
+
+
+
+
+
+<table id="appointmentTable">
+
+
+<tr>
+
+<th>ID</th>
+
+<th>Patient Name</th>
+
+<th>Doctor</th>
+
+<th>Date</th>
+
+<th>Phone</th>
+
+<th>Disease</th>
+
+<th>Type</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+
+
+
+
+
+{% for appointment in appointments %}
+
+
+<tr>
+
+
+<td>{{ appointment[0] }}</td>
+
+<td>{{ appointment[1] }}</td>
+
+<td>{{ appointment[2] }}</td>
+
+<td>{{ appointment[3] }}</td>
+
+<td>{{ appointment[4] }}</td>
+
+<td>{{ appointment[5] }}</td>
+
+<td>{{ appointment[6] }}</td>
+
+<td>
+
+{{ appointment[7] }}
+
+
+<br><br>
+
+
+<a href="/update_status/{{appointment[0]}}/Confirmed">
+
+<button class="status-btn">
+
+Confirm
+
+</button>
+
+</a>
+
+
+
+<a href="/update_status/{{appointment[0]}}/Completed">
+
+<button class="status-btn">
+
+Complete
+
+</button>
+
+</a>
+
+
+
+</td>
+
+
+
+<td>
+
+
+<a href="/edit_appointment/{{appointment[0]}}">
+
+<button class="edit-btn">
+
+Edit
+
+</button>
+
+</a>
+
+
+
+
+
+<a href="/delete_appointment/{{appointment[0]}}"
+onclick="return confirm('Delete this appointment?')">
+
+<button class="delete-btn">
+
+Delete
+
+</button>
+
+</a>
+
+
+</td>
+
+
+</tr>
+
+
+{% endfor %}
+
+
+
+</table>
+
+
+</div>
+
+
+
+
+
+
+<footer>
+
+<p>
+© 2026 Hospital Management System
+</p>
+
+</footer>
+
+
+
+
+
+
+
+<script>
+
+
+function searchAppointment(){
+
+
+let input=document.getElementById("search");
+
+let filter=input.value.toUpperCase();
+
+
+let table=document.getElementById("appointmentTable");
+
+let tr=table.getElementsByTagName("tr");
+
+
+
+for(let i=1;i<tr.length;i++){
+
+
+let td=tr[i].getElementsByTagName("td")[1];
+
+
+if(td){
+
+
+let text=td.textContent || td.innerText;
+
+
+if(text.toUpperCase().indexOf(filter)>-1){
+
+
+tr[i].style.display="";
+
+
+}
+
+else{
+
+
+tr[i].style.display="none";
+
+
+}
+
+
+}
+
+
+}
+
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

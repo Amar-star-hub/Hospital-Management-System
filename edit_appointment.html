@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Edit Appointment</title>
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+</head>
+
+
+<body>
+
+
+<header>
+
+
+<h1>✏️ Edit Appointment</h1>
+
+
+<nav>
+
+<a href="/">Home</a>
+
+<a href="/patient_list">Patients</a>
+
+<a href="/appointment_list">Appointments</a>
+
+<a href="/dashboard">Dashboard</a>
+
+</nav>
+
+
+</header>
+
+
+
+
+
+<div class="form-container">
+
+
+<h2>Update Appointment Details</h2>
+
+
+
+
+
+<form action="/update_appointment/{{ appointment[0] }}" method="POST">
+
+
+
+
+
+<label>
+Patient Name
+</label>
+
+
+<input
+
+type="text"
+
+name="patient_name"
+
+value="{{ appointment[1] }}"
+
+required>
+
+
+
+
+
+
+
+<label>
+Doctor Name
+</label>
+
+
+<select name="doctor" required>
+
+
+<option value="Dr. Patil"
+{% if appointment[2]=="Dr. Patil" %}selected{% endif %}>
+
+Dr. Patil
+
+</option>
+
+
+
+<option value="Dr. Sharma"
+{% if appointment[2]=="Dr. Sharma" %}selected{% endif %}>
+
+Dr. Sharma
+
+</option>
+
+
+
+<option value="Dr. Kulkarni"
+{% if appointment[2]=="Dr. Kulkarni" %}selected{% endif %}>
+
+Dr. Kulkarni
+
+</option>
+
+
+
+<option value="Dr. Deshmukh"
+{% if appointment[2]=="Dr. Deshmukh" %}selected{% endif %}>
+
+Dr. Deshmukh
+
+</option>
+
+
+</select>
+
+
+
+
+
+
+
+<label>
+Appointment Date
+</label>
+
+
+<input
+
+type="date"
+
+name="appointment_date"
+
+value="{{ appointment[3] }}"
+
+required>
+
+
+
+
+
+
+
+<label>
+Phone Number
+</label>
+
+
+<input
+
+type="text"
+
+name="phone"
+
+value="{{ appointment[4] }}"
+
+required>
+
+
+
+
+
+
+
+<label>
+Disease / Problem
+</label>
+
+
+<input
+
+type="text"
+
+name="disease"
+
+value="{{ appointment[5] }}"
+
+required>
+
+
+
+
+
+
+
+<label>
+Appointment Type
+</label>
+
+
+
+<select name="type" required>
+
+
+
+<option value="Regular Checkup"
+
+{% if appointment[6]=="Regular Checkup" %}selected{% endif %}>
+
+Regular Checkup
+
+</option>
+
+
+
+
+<option value="Emergency"
+
+{% if appointment[6]=="Emergency" %}selected{% endif %}>
+
+Emergency
+
+</option>
+
+
+
+
+<option value="Follow Up"
+
+{% if appointment[6]=="Follow Up" %}selected{% endif %}>
+
+Follow Up
+
+</option>
+
+
+
+</select>
+
+
+
+
+
+
+
+<br><br>
+
+
+
+<button type="submit">
+
+✏️ Update Appointment
+
+</button>
+
+
+
+</form>
+
+
+</div>
+
+
+
+
+
+
+
+<footer>
+
+
+<p>
+© 2026 Hospital Management System
+</p>
+
+
+</footer>
+
+
+
+</body>
+
+</html>
