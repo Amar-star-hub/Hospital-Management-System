@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Billing</title>
+
+<link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>💳 Hospital Billing</h1>
+
+<nav>
+
+<a href="/">Home</a>
+<a href="/dashboard">Dashboard</a>
+<a href="/bill_list">Bills</a>
+
+</nav>
+
+</header>
+
+
+
+<div class="form-container">
+
+
+<h2>Create Bill</h2>
+
+
+<form action="/create_bill" method="POST">
+
+
+<label>Patient Name</label>
+
+<input type="text"
+name="patient_name"
+required>
+
+
+
+<label>Doctor Name</label>
+
+<input type="text"
+name="doctor"
+required>
+
+
+
+
+<label>Consultation Fee</label>
+
+<input type="number"
+name="consultation_fee"
+required>
+
+
+
+
+<label>Medicine Charge</label>
+
+<input type="number"
+name="medicine_charge"
+required>
+
+
+
+<button type="submit">
+
+Create Bill
+
+</button>
+
+
+</form>
+
+
+</div>
+
+
+
+<footer>
+
+<p>
+© 2026 Hospital Management System
+</p>
+
+</footer>
+
+
+</body>
+
+</html>
