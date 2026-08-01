@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,7 +10,7 @@
 <title>Appointment List</title>
 
 
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="static/style.css">
 
 
 <style>
@@ -143,18 +143,18 @@ border:1px solid #ccc;
 <header>
 
 
-<h1>📅 Appointment Records</h1>
+<h1>ðŸ“… Appointment Records</h1>
 
 
 <nav>
 
-<a href="/">Home</a>
+<a href="index.html">Home</a>
 
-<a href="/patient_list">Patients</a>
+<a href="patient_list.html">Patients</a>
 
-<a href="/appointments">Book Appointment</a>
+<a href="appointment_list.html">Book Appointment</a>
 
-<a href="/dashboard">Dashboard</a>
+<a href="dashboard.html">Dashboard</a>
 
 <a href="/logout">Logout</a>
 
@@ -257,7 +257,7 @@ onkeyup="searchAppointment()"
 <br><br>
 
 
-<a href="/update_status/{{appointment[0]}}/Confirmed">
+<a href="appointment_list.html">
 
 <button class="status-btn">
 
@@ -269,7 +269,7 @@ Confirm
 
 
 
-<a href="/update_status/{{appointment[0]}}/Completed">
+<a href="appointment_list.html">
 
 <button class="status-btn">
 
@@ -288,7 +288,7 @@ Complete
 <td>
 
 
-<a href="/edit_appointment/{{appointment[0]}}">
+<a href="edit_appointment.html">
 
 <button class="edit-btn">
 
@@ -302,7 +302,7 @@ Edit
 
 
 
-<a href="/delete_appointment/{{appointment[0]}}"
+<a href="appointment_list.html"
 onclick="return confirm('Delete this appointment?')">
 
 <button class="delete-btn">
@@ -337,7 +337,7 @@ Delete
 <footer>
 
 <p>
-© 2026 Hospital Management System
+Â© 2026 Hospital Management System
 </p>
 
 </footer>

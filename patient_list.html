@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,7 +8,7 @@
 
 <title>Patient List</title>
 
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="static/style.css">
 
 
 <style>
@@ -111,21 +111,21 @@ tr:hover{
 <header>
 
 
-<h1>🧑 Registered Patients</h1>
+<h1>ðŸ§‘ Registered Patients</h1>
 
 
 
 <nav>
 
-<a href="/">Home</a>
+<a href="index.html">Home</a>
 
-<a href="/patients">Register Patient</a>
+<a href="patient.html">Register Patient</a>
 
-<a href="/appointments">Book Appointment</a>
+<a href="appointment_list.html">Book Appointment</a>
 
-<a href="/appointment_list">Appointments</a>
+<a href="appointment_list.html">Appointments</a>
 
-<a href="/dashboard">Dashboard</a>
+<a href="dashboard.html">Dashboard</a>
 
 
 </nav>
@@ -219,7 +219,7 @@ onkeyup="searchPatient()"
 
 
 
-<a href="/edit_patient/{{ patient[0] }}">
+<a href="edit_patient.html">
 
 <button class="edit-btn">
 
@@ -233,7 +233,7 @@ Edit
 
 
 
-<a href="/delete_patient/{{ patient[0] }}"
+<a href="patient_list.html"
 
 onclick="return confirm('Are you sure you want to delete this patient?')">
 
@@ -277,7 +277,7 @@ Delete
 <footer>
 
 <p>
-© 2026 Hospital Management System
+Â© 2026 Hospital Management System
 </p>
 
 

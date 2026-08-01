@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
 
 <title>Bill List</title>
 
-<link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+<link rel="stylesheet" href="static/style.css">
 
 </head>
 
@@ -15,14 +15,14 @@
 
 <header>
 
-<h1>💰 Billing Records</h1>
+<h1>ðŸ’° Billing Records</h1>
 
 
 <nav>
 
-<a href="/">Home</a>
-<a href="/billing">Create Bill</a>
-<a href="/dashboard">Dashboard</a>
+<a href="index.html">Home</a>
+<a href="billing.html">Create Bill</a>
+<a href="dashboard.html">Dashboard</a>
 
 </nav>
 
@@ -83,7 +83,7 @@
 <td>
 
 
-<a href="/update_payment/{{bill[0]}}/Paid">
+<a href="bill_list.html">
 
 <button>
 Paid
@@ -92,7 +92,7 @@ Paid
 </a>
 
 
-<a href="/delete_bill/{{bill[0]}}">
+<a href="bill_list.html">
 
 <button>
 Delete

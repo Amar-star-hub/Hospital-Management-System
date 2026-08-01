@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,7 +9,7 @@
 
 <title>Hospital Dashboard</title>
 
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="static/style.css">
 
 
 <style>
@@ -94,25 +94,25 @@ font-size:18px;
 <header>
 
 
-<h1>🏥 Hospital Management Dashboard</h1>
+<h1>ðŸ¥ Hospital Management Dashboard</h1>
 
 
 
 <nav>
 
-<a href="/">Home</a>
+<a href="index.html">Home</a>
 
-<a href="/doctors">Doctors</a>
+<a href="doctor.html">Doctors</a>
 
-<a href="/patient_list">Patients</a>
+<a href="patient_list.html">Patients</a>
 
-<a href="/appointment_list">Appointments</a>
+<a href="appointment_list.html">Appointments</a>
 
-<a href="/billing">Billing</a>
+<a href="billing.html">Billing</a>
 
-<a href="/bill_list">Bills</a>
+<a href="bill_list.html">Bills</a>
 
-<a href="/contact">Contact</a>
+<a href="contact.html">Contact</a>
 
 <a href="/logout">Logout</a>
 
@@ -131,7 +131,7 @@ font-size:18px;
 <div class="dashboard-container">
 
 
-<h2>Welcome Admin 👨‍💼</h2>
+<h2>Welcome Admin ðŸ‘¨â€ðŸ’¼</h2>
 
 
 <div class="cards">
@@ -140,7 +140,7 @@ font-size:18px;
 
 <div class="card">
 
-<h2>🧑 Patients</h2>
+<h2>ðŸ§‘ Patients</h2>
 
 <h1>{{ total_patients }}</h1>
 
@@ -154,7 +154,7 @@ font-size:18px;
 
 <div class="card">
 
-<h2>📅 Appointments</h2>
+<h2>ðŸ“… Appointments</h2>
 
 <h1>{{ total_appointments }}</h1>
 
@@ -168,7 +168,7 @@ font-size:18px;
 
 <div class="card">
 
-<h2>⏳ Pending</h2>
+<h2>â³ Pending</h2>
 
 <h1>{{ pending }}</h1>
 
@@ -182,7 +182,7 @@ font-size:18px;
 
 <div class="card">
 
-<h2>✅ Confirmed</h2>
+<h2>âœ… Confirmed</h2>
 
 <h1>{{ confirmed }}</h1>
 
@@ -196,7 +196,7 @@ font-size:18px;
 
 <div class="card">
 
-<h2>✔ Completed</h2>
+<h2>âœ” Completed</h2>
 
 <h1>{{ completed }}</h1>
 
@@ -210,7 +210,7 @@ font-size:18px;
 
 <div class="card">
 
-<h2>💰 Bills</h2>
+<h2>ðŸ’° Bills</h2>
 
 <h1>{{ total_bills }}</h1>
 
@@ -235,7 +235,7 @@ font-size:18px;
 
 
 <p>
-© 2026 Hospital Management System | All Rights Reserved
+Â© 2026 Hospital Management System | All Rights Reserved
 </p>
 
 
