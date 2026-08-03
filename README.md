@@ -1,4 +1,4 @@
-# Bill Management System
+# Hospital Management System
 
 A simple and efficient web application for managing hospital bills, appointments, and patient records.
 
